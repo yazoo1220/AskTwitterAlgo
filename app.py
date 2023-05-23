@@ -67,8 +67,8 @@ if ask_button:
         qa = load_chain()
         prefix = 'あなたはTwitterのアルゴリズムについて詳しいマーケティングの専門家です。下記の質問に対して初心者にもわかりやすく解説してください。知識にないものはわからないとこたえてください。\n質問:'
       # 'you are a very helpful explainer of videos. The attached is a transcript of a YouTube video and your task is to answer question. if you dont have a good answer based on the video, please say you do not know. yo your answer should be the same as i use after this sentence.  '
-        result = qa({"question": question, "chat_history": chat_history})
-        chat_history.append((question, result['answer']))
+        result = qa({"question": user_input, "chat_history": chat_history})
+        chat_history.append((user_input, result['answer']))
         st.session_state.past.append(user_input)
         st.session_state.generated.append(result['answer'])
 
